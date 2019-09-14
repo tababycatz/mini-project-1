@@ -6,9 +6,14 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 4200;
+var PORT = 8000;
 
-var tables = [];
+var tables = [{
+    name: "Frankie",
+    phone: "9736341318",
+    email: "frankiepp@wnyu.org",
+    uniqueID: "463728149362"
+}];
 var waitlist = [];
 
 // Sets up the Express app to handle data parsing
@@ -32,6 +37,10 @@ app.get("/reserve",function(req,res){
 app.listen(PORT, function(){
     console.log("App listening on PORT " + PORT);
 });
+app.get("/api/reservations",function(req,res){
+    return(res.json(tables))
+})
+
 
 app.post("/api/reservations", function(req,res) {
     var newtable = req.body;
