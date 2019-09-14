@@ -9,6 +9,7 @@ var app = express();
 var PORT = 4200;
 
 var tables = [];
+var waitlist = [];
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -36,5 +37,16 @@ app.post("/api/tables",function(req,res){
 
 
 app.listen(PORT, function(){
+    console.log("App listening on PORT " + PORT);
+});
+
+app.post("/api/reservations", function(req,res) {
+    var newtable = req.body;
+    console.log(newtable);
+    characters.push(newcharacter);
+    res.json(newtable);
+});
+
+app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
