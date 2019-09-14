@@ -1,66 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
+  <title>Hot Restaurant</title>
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
+  
 <body>
 
   <div class="container">
     <div class="jumbotron">
-        <h1>Hot Rasturent Express</h1>
-        <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
-        <hr>
-      <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Table</button></a>
+      <h1>Hot Restaurant</h1>
+      <h3>Book your seat before they are all gone!</h3>
+      <hr>
+      <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> View
+       Table</button></a>
+      <a href="/api/characters"><button class="btn btn-danger btn-lg"><span
+            class="fa fa-eye"></span> Make Reservation</button></a>
     </div>
-    <div class="row">
-
-      <div class="col-12">
-
-        <div class="card">
-          <div class="card-header">
-            <h3><strong>Make Reservation</strong></h3>
+    
           </div>
-          <div class="card-body">
-            <form method="POST" role="form">
-
-              <div class="form-group">
-                <label for="Name">Name</label>
-                <input type="text" class="form-control" id="name">
+          <div class="list-group">
               </div>
-
-              <div class="form-group">
-                <label for="UniqueID">Unique ID</label>
-                <input type="text" class="form-control" id="UniqueID">
-              </div>
-
-              <div class="form-group">
-                <label for="PhoneNum">Phone Number</label>
-                <input type="text" class="form-control" id="PhoneNum">
-              </div>
-
-              <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="text" class="form-control" id="Email">
-              </div>
-
-            </form>
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span> Add to the Force</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+              <a href="#" class="list-group-item list-group-item-action active">
+             
+              Current Reservations
+              </a>
 
   <script type="text/javascript">
     // Question: What does this code do?
