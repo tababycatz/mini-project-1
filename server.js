@@ -33,6 +33,10 @@ app.get("/reserve",function(req,res){
     res.sendFile(path.join(__dirname, "add.html"));
 });
 
+
+app.listen(PORT, function(){
+    console.log("App listening on PORT " + PORT);
+});
 app.get("/api/reservations",function(req,res){
     return(res.json(tables))
 })
@@ -45,6 +49,14 @@ app.post("/api/reservations", function(req,res) {
     res.json(newtable);
 });
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+app.get("api/reservations:tables", function(req,res) {
+var chosentable = req.params.tables;
+console.log(chosen)
+
+for (var i = 0; i < 4; i++) {
+    if (chosentable === tables[i].routeName) {
+        return res.json(tables[i]);
+    }
+}
+return res.json(false);
 });
