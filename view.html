@@ -10,11 +10,12 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
-
+  
 <body>
 
   <div class="container">
@@ -35,6 +36,26 @@
              
               Current Reservations
               </a>
-</body>
 
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newCharacter = {
+        Name: $("#Name").val().trim(),
+        UniqueID: $("#UniqueID").val().trim(),
+        PhoneNum: $("#PhoneNum").val().trim(),
+        Email: $("#Email").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/characters", newCharacter)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding character...");
+        });
+    });
+  </script>
+
+</body>
 </html>
