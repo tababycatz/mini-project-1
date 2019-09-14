@@ -29,13 +29,6 @@ app.get("/reserve",function(req,res){
 });
 
 
-app.post("/api/tables",function(req,res){
-    app.get("/api/characters", function(req, res) {
-        return res.json(tables);
-      });      
-})
-
-
 app.listen(PORT, function(){
     console.log("App listening on PORT " + PORT);
 });
@@ -43,10 +36,18 @@ app.listen(PORT, function(){
 app.post("/api/reservations", function(req,res) {
     var newtable = req.body;
     console.log(newtable);
-    characters.push(newcharacter);
+    tables.push(newtable);
     res.json(newtable);
 });
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+app.get("api/reservations:tables", function(req,res) {
+var chosentable = req.params.tables;
+console.log(chosen)
+
+for (var i = 0; i < 4; i++) {
+    if (chosentable === tables[i].routeName) {
+        return res.json(tables[i]);
+    }
+}
+return res.json(false);
 });
